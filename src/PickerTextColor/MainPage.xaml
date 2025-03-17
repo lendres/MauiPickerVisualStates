@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PickerTextColor.MainPage">
+
+	<ContentPage.Resources>
+
+		<Style TargetType="Label" x:Key="VisualStateHeadLine">
+			<Setter Property="FontSize" Value="24" />
+			<Setter Property="HorizontalOptions" Value="Center" />
+			<Setter Property="HorizontalTextAlignment" Value="Center" />
+
+			<Setter Property="TextColor" Value="Green"/>
+			<Setter Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					<VisualStateGroup x:Name="CommonStates">
+						<VisualState x:Name="Normal"/>
+						<VisualState x:Name="Disabled">
+							<VisualState.Setters>
+								<Setter Property="TextColor" Value="Red"/>
+							</VisualState.Setters>
+						</VisualState>
+					</VisualStateGroup>
+				</VisualStateGroupList>
+			</Setter>
+		</Style>
+
+		<!--<Style TargetType="Label" BasedOn="{StaticResource VisualStateHeadLine}">
+		</Style>-->
+
+
+		<Style TargetType="Picker" x:Key="VisualStatePicker">
+			<Setter Property="TextColor" Value="Green"/>
+			<Setter Property="TitleColor" Value="Green"/>
+			<Setter Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					<VisualStateGroup x:Name="CommonStates">
+						<VisualState x:Name="Normal"/>
+						<VisualState x:Name="Disabled">
+							<VisualState.Setters>
+								<Setter Property="TextColor" Value="Red"/>
+								<Setter Property="TitleColor" Value="Red"/>
+							</VisualState.Setters>
+						</VisualState>
+					</VisualStateGroup>
+				</VisualStateGroupList>
+			</Setter>
+		</Style>
+
+	</ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+
+			<Grid Padding="0" ColumnDefinitions="65,*" HorizontalOptions="Center">
+				<Switch Grid.Column="0" x:Name="EnabledSwitch" VerticalOptions="Center" WidthRequest="20" Margin="0" HorizontalOptions="Start"/>
+				<Label Grid.Column="1" Text="Toggle between enabled and disabled controls." VerticalOptions="Center" HorizontalOptions="Start"/>
+			</Grid>
+
+            <Label
+                Text="Hello, World!"
+                Style="{StaticResource VisualStateHeadLine}"
+				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}"/>
+
+			<Label
+                Text="Hello, World!"
+				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}"/>
+
+			<Picker
+				x:Name="MonkeyPicker1"
+				HorizontalOptions="Center"
+                Title="Picker Title" 
+				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}">
+				<Picker.ItemsSource>
+					<x:Array Type="{x:Type x:String}">
+						<x:String>Baboon</x:String>
+						<x:String>Capuchin Monkey</x:String>
+						<x:String>Blue Monkey</x:String>
+						<x:String>Squirrel Monkey</x:String>
+						<x:String>Golden Lion Tamarind</x:String>
+						<x:String>Howler Monkey</x:String>
+						<x:String>Japanese Macaque</x:String>
+					</x:Array>
+				</Picker.ItemsSource>
+			</Picker>
+
+			<Picker
+				x:Name="MonkeyPicker2"
+				HorizontalOptions="Center"
+                Title="Picker Title" 
+				Style="{StaticResource VisualStatePicker}"
+				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}">
+				<Picker.ItemsSource>
+					<x:Array Type="{x:Type x:String}">
+						<x:String>Baboon</x:String>
+						<x:String>Capuchin Monkey</x:String>
+						<x:String>Blue Monkey</x:String>
+						<x:String>Squirrel Monkey</x:String>
+						<x:String>Golden Lion Tamarind</x:String>
+						<x:String>Howler Monkey</x:String>
+						<x:String>Japanese Macaque</x:String>
+					</x:Array>
+				</Picker.ItemsSource>
+			</Picker>
+
+		</VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
