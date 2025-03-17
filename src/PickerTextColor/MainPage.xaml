@@ -64,13 +64,15 @@
 				<Label Grid.Column="1" Text="Toggle between enabled and disabled controls." VerticalOptions="Center" HorizontalOptions="Start"/>
 			</Grid>
 
+			<Label
+                Text="Hello, World!"
+				HorizontalOptions="Center"
+				FontSize="22"
+				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}"/>
+
             <Label
                 Text="Hello, World!"
                 Style="{StaticResource VisualStateHeadLine}"
-				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}"/>
-
-			<Label
-                Text="Hello, World!"
 				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}"/>
 
 			<Picker
