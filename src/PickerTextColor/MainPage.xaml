@@ -5,16 +5,29 @@
 
 	<ContentPage.Resources>
 
-		<Style TargetType="Label" x:Key="VisualStateHeadLine">
-			<Setter Property="FontSize" Value="24" />
-			<Setter Property="HorizontalOptions" Value="Center" />
-			<Setter Property="HorizontalTextAlignment" Value="Center" />
-
+		<Style TargetType="Label">
 			<Setter Property="TextColor" Value="Green"/>
 			<Setter Property="VisualStateManager.VisualStateGroups">
 				<VisualStateGroupList>
 					<VisualStateGroup x:Name="CommonStates">
 						<VisualState x:Name="Normal"/>
+						<VisualState x:Name="Disabled">
+							<VisualState.Setters>
+								<Setter Property="TextColor" Value="Red"/>
+							</VisualState.Setters>
+						</VisualState>
+					</VisualStateGroup>
+				</VisualStateGroupList>
+			</Setter>
+		</Style>
+
+		<Style TargetType="Label" x:Key="VisualStateHeadLine">
+			<Setter Property="TextColor" Value="Green"/>
+			<Setter Property="VisualStateManager.VisualStateGroups">
+				<VisualStateGroupList>
+					<VisualStateGroup x:Name="CommonStates">
+						<VisualState x:Name="Normal"/>
+
 						<VisualState x:Name="Disabled">
 							<VisualState.Setters>
 								<Setter Property="TextColor" Value="Red"/>
@@ -75,7 +88,7 @@
 
 			<Grid Padding="0" ColumnDefinitions="65,*" HorizontalOptions="Center">
 				<Switch Grid.Column="0" x:Name="EnabledSwitch" VerticalOptions="Center" WidthRequest="20" Margin="0" HorizontalOptions="Start"/>
-				<Label Grid.Column="1" Text="Toggle between enabled and disabled controls." VerticalOptions="Center" HorizontalOptions="Start"/>
+				<Label Grid.Column="1" Text="Toggle between enabled and disabled controls." Style="{StaticResource SubHeadline}"/>
 			</Grid>
 
 			<Label
