@@ -22,6 +22,7 @@
 		</Style>
 
 		<Style TargetType="Label" x:Key="VisualStateHeadLine">
+			<Setter Property="FontSize" Value="24" />
 			<Setter Property="TextColor" Value="Green"/>
 			<Setter Property="VisualStateManager.VisualStateGroups">
 				<VisualStateGroupList>
@@ -99,6 +100,7 @@
 
             <Label
                 Text="Hello, World!"
+				HorizontalOptions="Center"
                 Style="{StaticResource VisualStateHeadLine}"
 				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}"/>
 
