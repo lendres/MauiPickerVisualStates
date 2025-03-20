@@ -28,7 +28,6 @@
 				<VisualStateGroupList>
 					<VisualStateGroup x:Name="CommonStates">
 						<VisualState x:Name="Normal"/>
-
 						<VisualState x:Name="Disabled">
 							<VisualState.Setters>
 								<Setter Property="TextColor" Value="Red"/>
