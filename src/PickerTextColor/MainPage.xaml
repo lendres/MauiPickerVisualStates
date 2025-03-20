@@ -92,13 +92,13 @@
 			</Grid>
 
 			<Label
-                Text="Hello, World!"
+                Text="Override Style"
 				HorizontalOptions="Center"
 				FontSize="22"
 				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}"/>
 
             <Label
-                Text="Hello, World!"
+                Text="Assign Style"
 				HorizontalOptions="Center"
                 Style="{StaticResource VisualStateHeadLine}"
 				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}"/>
@@ -106,7 +106,7 @@
 			<Picker
 				x:Name="MonkeyPicker1"
 				HorizontalOptions="Center"
-                Title="Picker Title" 
+                Title="Override Style" 
 				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}">
 				<Picker.ItemsSource>
 					<x:Array Type="{x:Type x:String}">
@@ -124,7 +124,7 @@
 			<Picker
 				x:Name="MonkeyPicker2"
 				HorizontalOptions="Center"
-                Title="Picker Title" 
+                Title="Assign Style" 
 				Style="{StaticResource VisualStatePicker}"
 				IsEnabled="{Binding IsToggled, Source={x:Reference EnabledSwitch}, x:DataType=Switch}">
 				<Picker.ItemsSource>
