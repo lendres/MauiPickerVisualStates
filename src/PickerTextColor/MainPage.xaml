@@ -86,6 +86,12 @@
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a hovercraft number nine" />
 
+			<Button
+                Text="Navigate to Second Page" 
+                Clicked="OnNavigateForward"
+				HorizontalOptions="Center"
+                WidthRequest="240" />
+
 			<Grid Padding="0" ColumnDefinitions="65,*" HorizontalOptions="Center">
 				<Switch Grid.Column="0" x:Name="EnabledSwitch" VerticalOptions="Center" WidthRequest="20" Margin="0" HorizontalOptions="Start"/>
 				<Label Grid.Column="1" Text="Toggle between enabled and disabled controls." Style="{StaticResource SubHeadline}"/>
@@ -139,11 +145,6 @@
 					</x:Array>
 				</Picker.ItemsSource>
 			</Picker>
-
-			<Button
-                Text="Navigate to Second Page" 
-                Clicked="OnNavigateForward"
-                HorizontalOptions="Fill" />
 
 		</VerticalStackLayout>
     </ScrollView>

@@ -13,16 +13,17 @@
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
-            <Label
-                Text="Second Page"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-
             <Button
                 Text="Go Back" 
                 Clicked="OnNavigateBack"
-                HorizontalOptions="Fill" />
-        </VerticalStackLayout>
+                HorizontalOptions="Center"
+				WidthRequest="240" />
+
+			<Label
+                Text="Second Page"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+		</VerticalStackLayout>
     </ScrollView>
 
 </ContentPage>
