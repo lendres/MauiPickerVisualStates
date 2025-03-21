@@ -7,6 +7,7 @@
             InitializeComponent();
 			MonkeyPicker1.SelectedIndex = 1;
 			MonkeyPicker2.SelectedIndex = 1;
+			EnabledSwitch.IsToggled = true;
         }
     }
 }
